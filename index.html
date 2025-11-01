@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProClan Chichicastenango Limpio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-logo">
+                <div class="icon">♻</div>
+                <div class="header-title">
+                    <h1>Basura Limpia</h1>
+                    <p>Chichicastenango</p>
+                </div>
+            </div>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button onclick="switchTab('inicio')">🏠 Inicio</button>
+        <button onclick="switchTab('noticias')">📰 Noticias</button>
+        <button onclick="switchTab('ideas')">💡 Ideas Creativas</button>
+        <button onclick="switchTab('juego')">🎮 Juego</button>
+        <button onclick="switchTab('talleres')">📅 Talleres</button>
+        <button onclick="switchTab('reciclaje')">♻ Reciclaje</button>
+        <button onclick="switchTab('recursos')">📚 Recursos</button>
+    </div>
+
+    <main>
+        <!-- Inicio Tab -->
+        <div id="inicio" class="tab-content active">
+            <div class="hero-card">
+                <h2>Calles Limpias</h2>
+                <p>Chichicastenango libre de basura</p>
+            </div>
+            <div class="card">
+                <h3>¿Por qué es importante?</h3>
+                <div class="info-item">
+                    <div class="info-icon red">🏥</div>
+                    <div class="info-content">
+                        <h4>Salud Pública</h4>
+                        <p>Previene enfermedades respiratorias y gastrointestinales</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon blue">👥</div>
+                    <div class="info-content">
+                        <h4>Turismo</h4>
+                        <p>Atrae más visitantes y mejora nuestra economía</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon green">🌍</div>
+                    <div class="info-content">
+                        <h4>Medio Ambiente</h4>
+                        <p>Protege nuestros recursos naturales</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="feature-card" onclick="switchTab('ideas')">
+                    <div class="icon">♻</div>
+                    <p>Recicla</p>
+                    <span>Separa tus residuos</span>
+                </div>
+                <div class="feature-card blue" onclick="switchTab('juego')">
+                    <div class="icon">🗑</div>
+                    <p>Deposita</p>
+                    <span>Usa los basureros</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Noticias Tab -->
+        <div id="noticias" class="tab-content">
+            <h2 style="font-size: 1.75rem; color: #1f2937; margin-bottom: 1rem;text-align: center;">Noticias</h2>
+            
+            <div class="news-card">
+                <div class="news-header blue">NOTICIAS</div>
+                <div class="news-body">
+                    <h3>Día de Limpieza Exitoso</h3>
+                    <p>La comunidad municipal de Chichicastenango se reunió el viernes pasado para limpiar las calles, parques y espacios públicos del municipio.</p>
+                    <div class="news-footer">
+                        <span class="news-date">25 Oct 2025</span>
+                        <button class="btn-link" onclick="toggleNewsDetails('news1')">Ver más</button>
+                    </div>
+                    <div class="news-details" id="news1">
+                        <h4>🔴 Problema en Chichicastenango:</h4>
+                        <ul>
+                            <li>La carretera de 15 kilómetros que conecta Santa Cruz del Quiché con Chichicastenango presenta una enorme acumulación de basura que los turistas observan cuando visitan el municipio.</li>
+                            <li>Gran cantidad de basura acumulada a la orilla de la carretera departamental.</li>
+                            <li>La mayor cantidad de desechos son bolsas y botellas de plástico.</li>
+                            <li>La municipalidad coordina con directores de escuelas públicas para limpiar frente a establecimientos educativos ubicados a la orilla de la carretera.</li>
+                        </ul>
+                        <h4>🟡 Contexto del departamento de El Quiché:</h4>
+                        <ul>
+                            <li>En 2002, El Quiché se encontraba entre los departamentos con menos del 30% de cobertura de recolección de basura en zonas urbanas.</li>
+                        </ul>
+                        <h4>📊 Estadísticas de Guatemala:</h4>
+                        <div class="stat-box">
+                            <strong>51%</strong> de la población no cuenta con servicio de extracción de basura (Censo 2018)
+                        </div>
+                        <div class="stat-box">
+                            La recolección de basura en casas solo llega al <strong>65%</strong> en el área metropolitana y a menos del <strong>35%</strong> en el resto de las ciudades.
+                        </div>
+                        <div class="stat-box">
+                            Guatemala genera <strong>3,095,994 toneladas</strong> de desechos, convirtiéndose en el país que produce más contaminación en Centroamérica.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header green">ACTUALIZACIÓN</div>
+                <div class="news-body">
+                    <h3>Nueva Ruta de Recolección</h3>
+                    <p>Se implementó una nueva ruta de recolección que abarca más zonas del municipio, mejorando la frecuencia del servicio.</p>
+                    <div class="news-footer">
+                        <span class="news-date">20 Oct 2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-header purple">EDUCACIÓN</div>
+                <div class="news-body">
+                    <h3>Campaña de Concientización</h3>
+                    <p>Inicia campaña educativa en escuelas sobre la importancia del manejo adecuado de residuos y el reciclaje.</p>
+                    <div class="news-footer">
+                        <span class="news-date">15 Oct 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ideas Creativas Tab -->
+        <div id="ideas" class="tab-content">
+            <div class="hero-card">
+                <h2>Ideas Creativas de Reciclaje</h2>
+                <p>Transforma tu basura en algo útil</p>
+            </div>
+
+            <div class="creative-grid">
+                <div class="creative-card">
+                    <div class="creative-image">🪴</div>
+                    <div class="creative-content">
+                        <h4>Macetas con Botellas</h4>
+                        <p>Corta botellas de plástico por la mitad, decóralas y úsalas como macetas para plantas pequeñas o hierbas aromáticas.</p>
+                        <span class="difficulty facil">Fácil</span>
+                    </div>
+                </div>
+
+                <div class="creative-card">
+                    <div class="creative-image" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);">✏</div>
+                    <div class="creative-content">
+                        <h4>Portalápices</h4>
+                        <p>Usa latas de aluminio limpias, fórralas con papel o tela decorativa y tendrás organizadores únicos para tu escritorio.</p>
+                        <span class="difficulty facil">Fácil</span>
+                    </div>
+                </div>
+
+                <div class="creative-card">
+                    <div class="creative-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">🎨</div>
+                    <div class="creative-content">
+                        <h4>Arte con Tapas</h4>
+                        <p>Colecciona tapas de colores y crea mosaicos o murales artísticos para decorar tu hogar o escuela.</p>
+                        <span class="difficulty medio">Medio</span>
+                    </div>
+                </div>
+
+                <div class="creative-card">
+                    <div class="creative-image" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">💼</div>
+                    <div class="creative-content">
+                        <h4>Bolsas de Papel</h4>
+                        <p>Convierte periódicos viejos en bolsas resistentes para regalos o compras. Decóralas con pintura natural.</p>
+                        <span class="difficulty medio">Medio</span>
+                    </div>
+                </div>
+
+                <div class="creative-card">
+                    <div class="creative-image" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">🕯</div>
+                    <div class="creative-content">
+                        <h4>Portavelas con Vidrio</h4>
+                        <p>Limpia frascos de vidrio y decóralos con pintura, cuerda o tela. Perfectos para crear ambiente acogedor.</p>
+                        <span class="difficulty facil">Fácil</span>
+                    </div>
+                </div>
+
+                <div class="creative-card">
+                    <div class="creative-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">🎁</div>
+                    <div class="creative-content">
+                        <h4>Joyeros de Cartón</h4>
+                        <p>Usa cajas de cartón pequeñas, fórralas con tela bonita y crea compartimentos para organizar accesorios.</p>
+                        <span class="difficulty medio">Medio</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Juego Tab -->
+        <div id="juego" class="tab-content">
+            <div class="hero-card">
+                <h2>¡Clasifica la Basura!</h2>
+                <p>Ayuda a mantener limpio Chichicastenango</p>
+            </div>
+
+            <div class="game-container">
+                <div class="game-instructions">
+                    <h4>📱 Cómo Jugar:</h4>
+                    <p><strong>1.</strong> Toca un basurero para seleccionarlo (se iluminará en dorado)</p>
+                    <p><strong>2.</strong> Toca la basura que cae para clasificarla en el basurero seleccionado</p>
+                    <p><strong>3.</strong> ¡Gana 10 puntos por cada acierto! Pierdes 5 puntos por error</p>
+                    <p><strong>4.</strong> Tienes 60 segundos. ¡Clasifica todo lo que puedas!</p>
+                </div>
+
+                <div class="game-header">
+                    <div class="score">🏆 Puntos: <span id="scoreValue">0</span></div>
+                    <div class="timer">⏱ Tiempo: <span id="timerValue">60</span>s</div>
+                    <div class="lives">❤ Vidas: <span id="livesValue">3</span></div>
+                </div>
+
+                <div class="game-area" id="gameArea">
+                    <div class="bins-container">
+                        <div class="bin plastico" data-type="plastico" onclick="selectBin('plastico')">
+                            🥤
+                            <div class="bin-label">Plástico</div>
+                        </div>
+                        <div class="bin papel" data-type="papel" onclick="selectBin('papel')">
+                            📄
+                            <div class="bin-label">Papel</div>
+                        </div>
+                        <div class="bin vidrio" data-type="vidrio" onclick="selectBin('vidrio')">
+                            🍾
+                            <div class="bin-label">Vidrio</div>
+                        </div>
+                        <div class="bin organico" data-type="organico" onclick="selectBin('organico')">
+                            🍎
+                            <div class="bin-label">Orgánico</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-controls">
+                    <button class="btn" onclick="startGame()" id="startBtn">🎮 Iniciar Juego</button>
+                    <button class="btn secondary" onclick="pauseGame()" id="pauseBtn" style="display:none;">⏸ Pausar</button>
+                    <button class="btn secondary" onclick="resetGame()" id="resetBtn" style="display:none;">🔄 Reiniciar</button>
+                </div>
+
+                <div class="game-over" id="gameOver">
+                    <h3 id="gameOverTitle">¡Juego Terminado!</h3>
+                    <div class="final-score" id="finalScore">0</div>
+                    <p style="color: #6b7280; margin-bottom: 1rem;">puntos</p>
+                    <p id="gameOverMessage" style="color: #4b5563; margin-bottom: 1.5rem; font-size: 1.125rem;"></p>
+                    <button class="btn" onclick="resetGame()">🔄 Jugar de Nuevo</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Talleres Tab -->
+        <div id="talleres" class="tab-content">
+            <h2 style="font-size: 1.75rem; color: #1f2937; margin-bottom: 1rem; text-align: center;">Próximos Talleres</h2>
+            <div class="taller-card">
+                <div class="taller-content">
+                    <div class="taller-icon">🌱</div>
+                    <div class="taller-info">
+                        <div class="taller-category">Educación Ambiental</div>
+                        <h3>Taller de Compostaje</h3>
+                        <p>Aprende cómo convertir tu basura en compost para un jardín más saludable. Solo para jóvenes de 15 a 25 años.</p>
+                        <div class="taller-details">📅 5 Nov 2025 • ⏰ 10:00 AM</div>
+                        <div class="taller-details">📍 Centro Comunitario</div>
+                    </div>
+                </div>
+            </div>
+            <div class="taller-card">
+                <div class="taller-content">
+                    <div class="taller-icon">🎨</div>
+                    <div class="taller-info">
+                        <div class="taller-category">Arte y Reciclaje</div>
+                        <h3>Reciclaje Creativo</h3>
+                        <p>Transforma materiales reciclables en objetos útiles y decorativos para tu hogar.</p>
+                        <div class="taller-details">📅 12 Nov 2025 • ⏰ 2:00 PM</div>
+                        <div class="taller-details">📍 Salón Municipal</div>
+                    </div>
+                </div>
+            </div>
+            <div class="taller-card">
+                <div class="taller-content">
+                    <div class="taller-icon">🏠</div>
+                    <div class="taller-info">
+                        <div class="taller-category">Capacitación</div>
+                        <h3>Manejo de Residuos en Casa</h3>
+                        <p>Aprende las mejores prácticas para separar y manejar los residuos en tu hogar.</p>
+                        <div class="taller-details">📅 19 Nov 2025 • ⏰ 4:00 PM</div>
+                        <div class="taller-details">📍 Escuela Central</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reciclaje Tab -->
+        <div id="reciclaje" class="tab-content">
+            <div class="hero-card">
+                <h2 style="text-align: center;">Reciclaje de Plásticos</h2>
+                <p style="text-align: center;">Día de reciclaje en el municipio</p>
+            </div>
+            <div class="card">
+                <h3>¿Qué podemos reciclar?</h3>
+                <div class="info-item">
+                    <div class="info-icon blue">🥤</div>
+                    <div class="info-content">
+                        <h4>Plásticos</h4>
+                        <p>Botellas, envases, bolsas limpias</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon yellow">📄</div>
+                    <div class="info-content">
+                        <h4>Papel y Cartón</h4>
+                        <p>Periódicos, cajas, revistas</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🥫</div>
+                    <div class="info-content">
+                        <h4>Metales</h4>
+                        <p>Latas de aluminio, envases metálicos</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon green">🍾</div>
+                    <div class="info-content">
+                        <h4>Vidrio</h4>
+                        <p>Botellas, frascos limpios</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Beneficios del Reciclaje</h3>
+                <ul class="benefit-list">
+                    <li>Reduce la contaminación ambiental</li>
+                    <li>Ahorra recursos naturales</li>
+                    <li>Disminuye la cantidad de basura</li>
+                    <li>Genera empleos verdes</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Recursos Tab -->
+        <div id="recursos" class="tab-content">
+            <h2 style="font-size: 1.75rem; color: #1f2937; margin-bottom: 1rem; text-align: center;">Recursos para el Municipio</h2>
+            
+            <div class="resource-card">
+                <div>
+                    <span class="resource-badge">PDF</span>
+                    <h3>Guía de Separación de Residuos</h3>
+                    <p>Aprende a clasificar correctamente los diferentes tipos de basura en tu hogar.</p>
+                </div>
+                <div class="resource-arrow"><a href="https://www.marn.gob.gt/viceministro-de-recursos-naturales-y-cambio-climatico/los-residuos-y-desechos-solidos/material-de-apoyo-dimards/" target="_blank">></a></div>
+            </div>
+            <div class="resource-card">
+                <div>
+                    <span class="resource-badge">Calendario</span>
+                    <h3>Horarios de Recolección</h3>
+                    <p>Consulta los días y horarios en que pasa el camión recolector por tu zona.</p>
+                </div>
+                <div class="resource-arrow"><a href="archivos/calendario de recolecion .png">></a></div>
+            </div>
+            <div class="resource-card">
+                <div>
+                    <span class="resource-badge">Contacto</span>
+                    <h3>Contacto Municipal</h3>
+                    <p>Reporta problemas relacionados con la basura o solicita información adicional.</p>
+                </div>
+                <div class="resource-arrow"><a href="tel:+50257447011">></a></div>
+            </div>
+            <div class="resource-card">
+                <div>
+                    <span class="resource-badge">Video</span>
+                    <h3>Video: Cómo hacer compost</h3>
+                    <p>Tutorial paso a paso para crear tu propio compost casero.</p>
+                </div>
+                <div class="resource-arrow"><a href="https://www.youtube.com/watch?v=wwvnuFisBVE" target="_blank">></a></div>
+            </div>
+            <div class="contact-card">
+                <h3>¿Necesitas ayuda?</h3>
+                <p>Contáctanos para más información sobre el manejo de residuos</p>
+                <button class="btn"><a href="tel:+50257447011">llamanos al 57447011</a></button>
+            </div>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <button class="nav-btn active" onclick="switchTab('inicio')" data-tab="inicio">
+            <div class="icon">🏠</div>
+            <span>Inicio</span>
+        </button>
+        <button class="nav-btn" onclick="switchTab('noticias')" data-tab="noticias">
+            <div class="icon">📰</div>
+            <span>Noticias</span>
+        </button>
+        <button class="nav-btn" onclick="switchTab('ideas')" data-tab="ideas">
+            <div class="icon">💡</div>
+            <span>Ideas</span>
+        </button>
+        <button class="nav-btn" onclick="switchTab('juego')" data-tab="juego">
+            <div class="icon">🎮</div>
+            <span>Juego</span>
+        </button>
+        <button class="nav-btn" onclick="switchTab('recursos')" data-tab="recursos">
+            <div class="icon">📚</div>
+            <span>Recursos</span>
+        </button>
+    </nav>
+    <script src="script.js"></script>
+</body>
+</html>
